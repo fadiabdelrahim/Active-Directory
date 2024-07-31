@@ -22,6 +22,8 @@ This project outlines the steps to set up a basic home lab running Active Direct
 
 - Download and install Oracle VirtualBox along with the VirtualBox Extension Pack.
 
+![picture2](Picture2.png)
+
 ![Picture2](https://github.com/user-attachments/assets/c661867c-b826-4eb7-a3bf-f9de3e269bde)
 
 ***Step 2: Download ISOs***

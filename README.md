@@ -32,6 +32,8 @@ This project outlines the steps to set up a basic home lab running Active Direct
 - *Client VM configuration:*
   - ***Name:*** CLIENT1
   - ***Network*** Internal
+ 
+  ***
 
 **Server Configuration**
 
@@ -51,62 +53,66 @@ This project outlines the steps to set up a basic home lab running Active Direct
 
 ## Step-by-Step Deployment
 
-***Step 1: Downoad and Install VirtualBox***
+***Step 1: Download and Install VirtualBox***
 
-- Download and install Oracle VirtualBox along with the VirtualBox Extension Pack.
+<div align="center"> Download and install Oracle VirtualBox along with the VirtualBox Extension Pack.</div>
 
-![picture2](images/Picture2.png)
+<p align="center"><img src=images/Picture2.png></p>  
 
 ***Step 2: Download ISOs***
 
-- Download the Windows 10 ISO and Server 2019 ISO.
+<div align="center"> Download the Windows 10 ISO and Server 2019 ISO.</div>
 
-![Picture3](images/Picture3.png)
+<p align="center"><img src=images/Picture3.png></p> 
 
-![Picture4](images/Picture4.png)
+<p align="center"><img src=images/Picture4.png></p> 
 
-![Picture5](images/Picture5.png)
+<p align="center"><img src=images/Picture5.png></p> 
 
-![Picture6](images/Picture6.png)
+<p align="center"><img src=images/Picture6.png></p> 
 
-![Picture7](images/Picture7.png)
+<p align="center"><img src=images/Picture7.png></p> 
 
-![Picture8](images/Picture8.png)
+<p align="center"><img src=images/Picture8.png></p> 
 
-![Picture9](images/Picture9.png)
+<p align="center"><img src=images/Picture9.png></p> 
 
-![Picture10](images/Picture10.png)
+<p align="center"><img src=images/Picture10.png></p> 
 
 ***Step 3: Create and configure a domain controller virtual machine***
 
-- Open VirtualBox and select new
+<div align="center">Open VirtualBox and select new</div>
 
-![Picture11](images/Picture11.png)
+<p align="center"><img src=images/Picture11.png></p>
 
-![Picture12](images/Picture12.png)
+<p align="center"><img src=images/Picture12.png></p>
 
-- Create the Server 2019 Virtual Machine (VM). Name the VM ***DC***. Select the type as ***Windows***. Select version ***Other Windows (64-bit)*** and select next
+<div align="center">Create the Server 2019 Virtual Machine (VM). Name the VM "DC". Select the type as "Windows". Select version "Other Windows (64-bit)" and select next</div>
 
-![Picture13](images/Picture13.png)
+<p align="center"><img src=images/Picture13.png></p>
 
-- Select the amount of RAM and CPU to assign to the VM
+<div align="center">Select the amount of RAM and CPU to assign to the VM</div>
 
-![Picture14](images/Picture14.png)
+<p align="center"><img src=images/Picture14.png></p>
 
-- Select ***Create a Virtual Hard Disk Now***, assign Disk Size, and select next
+<div align="center">Select "Create a Virtual Hard Disk Now", assign Disk Size, and select next</div>
 
-![Picture15](images/Picture15.png)
+<p align="center"><img src=images/Picture15.png></p>
 
-- Review VM summary and select Finish to create
+<div align="center">Review VM summary and select Finish to create</div>
 
-![Picture16](images/Picture16.png)
+<p align="center"><img src=images/Picture16.png></p>
 
-- Select the DC virtual machine and select Settings
+<div align="center">Select the DC virtual machine and select Settings</div>
 
-![Picture17](images/Picture17.png)
+<p align="center"><img src=images/Picture17.png></p>
 
-- Select Network and select Adapter 2. Check the box to Enable Network Adapter. Attach it to Internal Network and select OK. We are creating the domain controller now and we want to have two NICs. We want one that’s dedicated for the internet that will be running NAT (Adapter 1) and then we will have one that is dedicated for the internal VMWare network (Adapter 2).
+<div align="center">Select Network and select Adapter 2. Check the box to Enable Network Adapter. Attach it to Internal Network and select OK. We are creating the domain controller now and we want to have two NICs. We want one that’s dedicated for the internet that will be running NAT (Adapter 1) and then we will have one that is dedicated for the internal VMWare network (Adapter 2)</div>
 
-![Picture18](images/Picture18.png)
+<p align="center"><img src=images/Picture18.png></p>
+
+***Step 4: Install and configure Server 2019 and Active Directory***
+
+
 
 ## 

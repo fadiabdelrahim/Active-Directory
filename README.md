@@ -203,10 +203,9 @@ This project outlines the steps to set up a basic home lab running Active Direct
 
 <div align="center">Select Change adapter options</div>
 
-<p align="center">
-  <img src=images/Picture46.png>
-  <img src=images/Picture47.png>
-</p>
+<p align="center"><img src=images/Picture46.png></p>
+  
+ <p align="center"><img src=images/Picture47.png></p>
 
 <div align="center">We have two adapters. We will rename them appropriately because we will use these later when setting up routing. Ethernet is our Adapter 1 in the VM which is the NIC (Internet) and Ethernet 2 is Adapter 2 in the VM which is NIC (Internal). Right click each adapter and rename it</div>
 
@@ -231,9 +230,11 @@ This project outlines the steps to set up a basic home lab running Active Direct
 
 <div align="center">Next, we are going to rename this PC. Right click the start menu and go to System and select Rename this PC and name it DC</div>
 
-<p align="center">
-  <img src=images/Picture55.png>
-  <img src=images/Picture56.png>
+<p align="center"><img src=images/Picture55.png></p>
+
+<p align="center"><img src=images/Picture56.png></p>
+  
+<p align="center">  
   <img src=images/Picture57.png>
   <img src=images/Picture58.png>
 </p>

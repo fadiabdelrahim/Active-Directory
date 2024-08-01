@@ -20,6 +20,35 @@ This project outlines the steps to set up a basic home lab running Active Direct
 
 ![Picture1](images/Picture1.jpg)
 
+## Lab Configuration
+
+**Virtual Machine Configuration**
+
+- *Server VM Configuration:*
+  - ***Name:*** DC
+  - ***Type:*** Windows
+  - ***Version:*** Other Windows (64-bit)
+  - ***Network:*** Two adapters (NAT and internal)
+- *Client VM configuration:*
+  - ***Name:*** CLIENT1
+  - ***Network*** Internal
+
+**Server Configuration**
+
+- *Install Windows Server 2019:*
+  - Install *Windows Sever 2019 Standard Evaluation* (Desktop Experience)
+  - Set up the administrator account
+- *IP Address Configuration:*
+  - ***Internal NIC:*** 172.16.0.1
+  - ***Subnet Mask:*** 255.255.255.0
+  - ***DNS:*** 127.0.0.1
+- *Active Directory Setup:*
+  - Add Active Directory Domain Services role
+  - Create a new forest and domain (mydomain.com)
+- *NAT and DHCP Configuration:*
+  - Install and configure Routing and Remote Access for NAT
+  - Set up DHCP with a scope  
+
 ## Step-by-Step Deployment
 
 ***Step 1: Downoad and Install VirtualBox***
@@ -50,7 +79,7 @@ This project outlines the steps to set up a basic home lab running Active Direct
 
 ***Step 3: Create and configure a domain controller virtual machine***
 
-- Open VirtualBox
+- Open VirtualBox and select new
 
 
 

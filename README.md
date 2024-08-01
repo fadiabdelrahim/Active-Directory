@@ -16,25 +16,42 @@ This project outlines the steps to set up a basic home lab running Active Direct
 4. Install and configure Server 2019 and Active Directory.
 5. Create and configure a client virtual machine running Windows 10.
 
+## Topology
+
+
+
 ## Step-by-Step Deployment
 
 ***Step 1: Downoad and Install VirtualBox***
 
 - Download and install Oracle VirtualBox along with the VirtualBox Extension Pack.
 
-![picture2](Picture2.png)
-
-![Picture2](https://github.com/user-attachments/assets/c661867c-b826-4eb7-a3bf-f9de3e269bde)
+![picture2](images/Picture2.png)
 
 ***Step 2: Download ISOs***
 
 - Download the Windows 10 ISO and Server 2019 ISO.
 
-![Picture3](https://github.com/user-attachments/assets/9292138d-c6ec-4d84-a0b8-72f5df777e3d)
+![Picture3](images/Picture3.png)
 
-![Picture4](https://github.com/user-attachments/assets/a2b4e596-4239-49da-bac4-af5756a2ca5f)
+![Picture4](images/Picture4.png)
 
-![Picture5](https://github.com/user-attachments/assets/56b6c172-7f4f-44ee-befc-804e28d44e61)
+![Picture5](images/Picture5.png)
+
+![Picture6](images/Picture6.png)
+
+![Picture7](images/Picture7.png)
+
+![Picture8](images/Picture8.png)
+
+![Picture9](images/Picture9.png)
+
+![Picture10](images/Picture10.png)
+
+***Step 3: Create and configure a domain controller virtual machine***
+
+- Open VirtualBox
+
 
 
 ## 

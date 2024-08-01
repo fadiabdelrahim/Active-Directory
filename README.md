@@ -81,6 +81,32 @@ This project outlines the steps to set up a basic home lab running Active Direct
 
 - Open VirtualBox and select new
 
+![Picture11](images/Picture11.png)
 
+![Picture12](images/Picture12.png)
+
+- Create the Server 2019 Virtual Machine (VM). Name the VM ***DC***. Select the type as ***Windows***. Select version ***Other Windows (64-bit)*** and select next
+
+![Picture13](images/Picture13.png)
+
+- Select the amount of RAM and CPU to assign to the VM
+
+![Picture14](images/Picture14.png)
+
+- Select ***Create a Virtual Hard Disk Now***, assign Disk Size, and select next
+
+![Picture15](images/Picture15.png)
+
+- Review VM summary and select Finish to create
+
+![Picture16](images/Picture16.png)
+
+- Select the DC virtual machine and select Settings
+
+![Picture17](images/Picture17.png)
+
+- Select Network and select Adapter 2. Check the box to Enable Network Adapter. Attach it to Internal Network and select OK. We are creating the domain controller now and we want to have two NICs. We want one that’s dedicated for the internet that will be running NAT (Adapter 1) and then we will have one that is dedicated for the internal VMWare network (Adapter 2).
+
+![Picture18](images/Picture18.png)
 
 ## 

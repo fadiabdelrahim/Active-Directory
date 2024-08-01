@@ -63,21 +63,16 @@ This project outlines the steps to set up a basic home lab running Active Direct
 
 <div align="center"> Download the Windows 10 ISO and Server 2019 ISO.</div>
 
-<p align="center"><img src=images/Picture3.png></p> 
-
-<p align="center"><img src=images/Picture4.png></p> 
-
-<p align="center"><img src=images/Picture5.png></p> 
-
-<p align="center"><img src=images/Picture6.png></p> 
-
-<p align="center"><img src=images/Picture7.png></p> 
-
-<p align="center"><img src=images/Picture8.png></p> 
-
-<p align="center"><img src=images/Picture9.png></p> 
-
-<p align="center"><img src=images/Picture10.png></p> 
+<p align="center">
+  <img src=images/Picture3.png> 
+  <img src=images/Picture4.png> 
+  <img src=images/Picture5.png>
+  <img src=images/Picture6.png> 
+  <img src=images/Picture7.png>
+  <img src=images/Picture8.png>
+  <img src=images/Picture9.png>
+  <img src=images/Picture10.png>
+</p> 
 
 ***Step 3: Create and configure a domain controller virtual machine***
 
@@ -112,6 +107,137 @@ This project outlines the steps to set up a basic home lab running Active Direct
 <p align="center"><img src=images/Picture18.png></p>
 
 ***Step 4: Install and configure Server 2019 and Active Directory***
+
+<div align="center">Start the DC virtual machine</div>
+
+<p align="center"><img src=images/Picture19.png></p>
+
+<div align="center">Mount the Server2019 to the DC virtual machine. Select the DVD drop down menu and select the “Server2019.iso” file we downloaded. Select “Mount and Retry Boot”</div>
+
+<p align="center"><img src=images/Picture20.png></p>
+
+<div align="center">Select Next to begin Windows Server 2019 Installation</div>
+
+<p align="center">
+  <img src=images/Picture21.png>
+  <img src=images/Picture22.png>
+</p>
+
+<div align="center">Next select the ‘Windows Server2019 Standard Evaluation (Desktop Experience). This option installs the full Windows graphical environment</div>
+
+<p align="center"><img src=images/Picture23.png></p>
+
+<div align="center">Accept the license terms and select next</div>
+
+<p align="center"><img src=images/Picture24.png></p>
+
+<div align="center">Next select “Custom: Install Windows only (advanced)”</div>
+
+<p align="center"><img src=images/Picture25.png></p>
+
+<div align="center">Select Next to install windows server2019 on the virtual machine hard drive</div> 
+
+<p align="center"><img src=images/Picture26.png></p>
+
+<div align="center">The installation process may take a while. Also, the server is going to restart several times during this phase. It will get to a black screen where it says “Press any key to boot from CD or DVD” you do not want to do that because you do not want to boot into the setup again. Just don’t touch it and it will end up booting into Windows</div> 
+
+<p align="center"><img src=images/Picture27.png></p>
+
+<div align="center">Sever2019 has been installed. This is the built-in default administrator account. Assign a password to this account and select Finish</div>
+
+<p align="center"><img src=images/Picture28.png></p>
+
+<div align="center">We have successfully installed Windows Server2019</div>
+
+<p align="center"><img src=images/Picture29.png></p>
+
+<div align="center">Next, we need to press Ctrl + Alt + Delete to unlock. To do this navigate to the Input tab in VirtualBox menu and select Keyboard -> Inset Ctrl-Alt-Del (If you try to unlock using your keyboard you will need to use Host + Del)</div>
+
+<p align="center"><img src=images/Picture30.png></p>
+
+<div align="center">Log in to the Administrator account with the password created earlier</div>
+
+<p align="center"><img src=images/Picture31.png></p>
+
+<div align="center">Let the server start up for the first time. Once startup is completed close any pop-up windows until you are at the Server Manager Dashboard</div>
+
+<p align="center"><img src=images/Picture32.png></p>
+
+<div align="center">The first thing we are going to do is install the VM guest additions. This will help give us a better experience (help with mouse lag and screen re-size). Go to Devices -> Insert Guest Additions CD image</div>
+
+<p align="center"><img src=images/Picture33.png></p>
+
+<div align="center">Next select file explore</div>
+
+<p align="center"><img src=images/Picture34.png></p>
+
+<div align="center">Next select This PC</div>
+
+<p align="center"><img src=images/Picture35.png></p>
+
+<div align="center">Next select CD Drive (D:) VirtualBox Guest Additions</div>
+
+<p align="center"><img src=images/Picture36.png></p>
+
+<div align="center">Next select and run the VBoxWindowsAdditions-amd64</div>
+
+<p align="center">
+  <img src=images/Picture37.png>
+  <img src=images/Picture38.png>
+  <img src=images/Picture39.png>
+  <img src=images/Picture40.png>
+  <img src=images/Picture41.png>
+</p>
+
+<div align="center">Next unlock and sign in Administrator account</div>
+
+<p align="center">
+  <img src=images/Picture42.png>
+  <img src=images/Picture43.png>
+  <img src=images/Picture44.png>
+</p>
+
+<div align="center">Next let’s set up our IP addressing. We have two NICs. We have one that is dedicated to the internet, and we have the internal one that is going to be used for the internal network. The NIC on the internet will automatically get an IP address from the router so no need to make any changes to that one but for the internal one we need to set it up manually.  In the VM go to Network to view Network & Internet Settings</div>
+
+<p align="center"><img src=images/Picture45.png></p>
+
+<div align="center">Select Change adapter options</div>
+
+<p align="center">
+  <img src=images/Picture46.png>
+  <img src=images/Picture47.png>
+</p>
+
+<div align="center">We have two adapters. We will rename them appropriately because we will use these later when setting up routing. Ethernet is our Adapter 1 in the VM which is the NIC (Internet) and Ethernet 2 is Adapter 2 in the VM which is NIC (Internal). Right click each adapter and rename it</div>
+
+<p align="center">
+  <img src=images/Picture48.png>
+  <img src=images/Picture49.png>
+  <img src=images/Picture50.png>
+  <img src=images/Picture51.png>
+</p>
+
+<div align="center">Next assign the IP address to the Internal Adapter. Right click on Internal and select Properties</div>
+
+<p align="center"><img src=images/Picture52.png></p>
+
+<div align="center">Select Internet Protocol Version 4 (TCP/IPV4) and select Properties</div>
+
+<p align="center"><img src=images/Picture53.png></p>
+
+<div align="center">Select Use the following IP address and enter IP address 172.16.0.1 and Subnet mask 255.255.255.0. Default Gateway will be empty because the domain controller itself is going to serve as the default gateway. It has two NICs one is on the internet, and one is on the internal. For the DNS server when we install Active Directory it automatically installs DNS, so this server is going to use itself as the DNS server. To do that we will use IP 127.0.0.1 which is the loopback address</div>
+
+<p align="center"><img src=images/Picture54.png></p>
+
+<div align="center">Next, we are going to rename this PC. Right click the start menu and go to System and select Rename this PC and name it DC</div>
+
+<p align="center">
+  <img src=images/Picture55.png>
+  <img src=images/Picture56.png>
+  <img src=images/Picture57.png>
+  <img src=images/Picture58.png>
+</p>
+
 
 
 

@@ -239,28 +239,28 @@ This project outlines the steps to set up a basic home lab running Active Direct
   <img src=images/Picture58.png>
 </p>
 
-Next unlock and sign in Administrator account
+<div align="center">Next unlock and sign in Administrator account</div>
 
 <p align="center"><img src=images/Picture59.png></p>
 <p align="center"><img src=images/Picture60.png></p>
 <p align="center"><img src=images/Picture61.png></p>
 
-The next thing we are going to do is install Active Directory Domain Services and create a domain. Select Add roles and features
+<div align="center">The next thing we are going to do is install Active Directory Domain Services and create a domain. Select Add roles and features</div>
 
 <p align="center">  
   <img src=images/Picture62.png>
   <img src=images/Picture63.png>
 </p>
 
-Select Role-based or feature-based installation
+<div align="center">Select Role-based or feature-based installation</div>
 
 <p align="center"><img src=images/Picture64.png></p>
 
-Select DC server we created as the Select destination server to install the Active Directory Domain Services on it
+<div align="center">Select DC server we created as the Select destination server to install the Active Directory Domain Services on it</div>
 
 <p align="center"><img src=images/Picture65.png></p>
 
-Select Active Directory Domain Services 
+<div align="center">Select Active Directory Domain Services</div>
 
 <p align="center">
   <img src=images/Picture66.png>
@@ -271,19 +271,19 @@ Select Active Directory Domain Services
   <img src=images/Picture71.png>
 </p>
 
-Now that the role has been installed, we can close the Add Roles and Feature Wizard
+<div align="center">Now that the role has been installed, we can close the Add Roles and Feature Wizard</div>
 
 <p align="center"><img src=images/Picture72.png></p>
 
-Next check notifications, we need to do our post deployment configuration (we installed the software for active directory domain services, but we did not actually create the domain yet). Select Promote this server to domain controller
+<div align="center">Next check notifications, we need to do our post deployment configuration (we installed the software for active directory domain services, but we did not actually create the domain yet). Select Promote this server to domain controller</div>
 
 <p align="center"><img src=images/Picture73.png></p>
 
-Next select Add a new forest. For the Domain name enter mydomain.com and select next
+<div align="center">Next select Add a new forest. For the Domain name enter mydomain.com and select next</div>
 
 <p align="center"><img src=images/Picture74.png></p>
 
-Next enter a password for Directory Services Restore Mode (DSRM)
+<div align="center">Next enter a password for Directory Services Restore Mode (DSRM)</div>
 
 <p align="center">
   <img src=images/Picture75.png>
@@ -294,63 +294,63 @@ Next enter a password for Directory Services Restore Mode (DSRM)
   <img src=images/Picture80.png>
 </p>
 
-Now that it has finished installing it is going to automatically restart the computer for us (This may take a while to complete restart)
+<div align="center">Now that it has finished installing it is going to automatically restart the computer for us (This may take a while to complete restart)</div>
 
 <p align="center"><img src=images/Picture81.png></p>
 
-Next unlock and sign into our built-in Administrator account. You will notice we now have MYDOMAIN\Administrator 
+<div align="center">Next unlock and sign into our built-in Administrator account. You will notice we now have MYDOMAIN\Administrator</div>
 
 <p align="center"><img src=images/Picture82.png></p>
 <p align="center"><img src=images/Picture83.png></p>
 <p align="center"><img src=images/Picture84.png></p>
 
-Now we are going to create our own dedicated Domain Admin Account instead of using the built-in administrator account. To do this go to Start -> Windows Administrative Tools -> Active Directory Users and Computers
+<div align="center">Now we are going to create our own dedicated Domain Admin Account instead of using the built-in administrator account. To do this go to Start -> Windows Administrative Tools -> Active Directory Users and Computers</div>
 
 <p align="center"><img src=images/Picture85.png></p>
 
-We can see this mydomian.com is our newly created domain it’s all fresh 
+<div align="center">We can see this mydomian.com is our newly created domain it’s all fresh</div>
 
 <p align="center"><img src=images/Picture86.png></p>
 
-Next, we will create an organizational unit to put our admin account in. Right click mydomain.com -> New -> Organizational Unit
+<div align="center">Next, we will create an organizational unit to put our admin account in. Right click mydomain.com -> New -> Organizational Unit</div>
 
 <p align="center"><img src=images/Picture87.png></p>
 
-Next, we will give a name to the new Organizational Unit. Name it _ADMINS
+<div align="center">Next, we will give a name to the new Organizational Unit. Name it _ADMINS</div>
 
 <p align="center"><img src=images/Picture88.png></p>
 
-Next, we will need to create a new user in the _ADMINS Organizational Unit. Right click on _ADMINS -> New -> User
+<div align="center">Next, we will need to create a new user in the _ADMINS Organizational Unit. Right click on _ADMINS -> New -> User</div>
 
 <p align="center"><img src=images/Picture89.png></p>
 
-Next we will enter the information for the new user
+<div align="center">Next we will enter the information for the new user</div>
 
 <p align="center"><img src=images/Picture90.png></p>
 
-Next enter a password for the new user
+<div align="center">Next enter a password for the new user</div>
 
 <p align="center">
   <img src=images/Picture91.png>
   <img src=images/Picture92.png>
 </p>
 
-We now have an account but it’s not an admin yet even though we named it a-fabdelrahim
+<div align="center">We now have an account but it’s not an admin yet even though we named it a-fabdelrahim</div>
 
 <p align="center"><img src=images/Picture93.png></p>
 
-To make a domain admin right click the user and select properties
+<div align="center">To make a domain admin right click the user and select properties</div>
 
 <p align="center"><img src=images/Picture94.png></p>
 
-Next select Member Of -> Add
+<div align="center">Next select Member Of -> Add</div>
 
 <p align="center">
   <img src=images/Picture95.png>
   <img src=images/Picture96.png>
 </p>
 
-Next, we will enter Domain Admins in the Enter the object names to select to resolve to domain admin
+<div align="center">Next, we will enter Domain Admins in the Enter the object names to select to resolve to domain admin</div>
 
 <p align="center">
   <img src=images/Picture97.png>
@@ -358,20 +358,20 @@ Next, we will enter Domain Admins in the Enter the object names to select to res
   <img src=images/Picture99.png>
 </p>
 
-Now we have our very own domain admin account. To use this, go ahead and log out of the Domain Controller
+<div align="center">Now we have our very own domain admin account. To use this, go ahead and log out of the Domain Controller</div>
 
 <p align="center"><img src=images/Picture100.png></p>
 
-Unlock the lock screen
+<div align="center">Unlock the lock screen</div>
 
 <p align="center"><img src=images/Picture101.png></p>
 
-Instead of logging into this administrator one we are going to select Other user and we see it says sign into MYDOMAIN. We are going to use our domain admin account here (a-fabdelrahim) to log in
+<div align="center">Instead of logging into this administrator one we are going to select Other user and we see it says sign into MYDOMAIN. We are going to use our domain admin account here (a-fabdelrahim) to log in</div>
 
 <p align="center"><img src=images/Picture102.png></p>
 <p align="center"><img src=images/Picture103.png></p>
 
-Next, we are going to install RAS/NAT, that is like remote access server (RAS) network address and network address translation (NAT). The purpose of this is to allow us when we create our Windows 10 client, it is going to allow this client to be on this private virtual network but still be able to access the internet through the domain controller. So, we are going to install RAS and NAT on the domain controller to allow our clients to do that. To do this we will go to Add roles and features 
+<div align="center">Next, we are going to install RAS/NAT, that is like remote access server (RAS) network address and network address translation (NAT). The purpose of this is to allow us when we create our Windows 10 client, it is going to allow this client to be on this private virtual network but still be able to access the internet through the domain controller. So, we are going to install RAS and NAT on the domain controller to allow our clients to do that. To do this we will go to Add roles and features</div>
 
 <p align="center">
   <img src=images/Picture104.png>
@@ -380,7 +380,7 @@ Next, we are going to install RAS/NAT, that is like remote access server (RAS) n
   <img src=images/Picture107.png>
 </p>
 
-Select Remote Access
+<div align="center">Select Remote Access</div>
 
 <p align="center">
   <img src=images/Picture108.png>
@@ -388,7 +388,7 @@ Select Remote Access
   <img src=images/Picture110.png>
 </p>
 
-Next, we are going to install Routing and DirectAccess and VPN (RAS). RAS will be checked automatically once you select Routing and select Add Features
+<div align="center">Next, we are going to install Routing and DirectAccess and VPN (RAS). RAS will be checked automatically once you select Routing and select Add Features</div>
 
 <p align="center">
   <img src=images/Picture111.png>
@@ -400,31 +400,31 @@ Next, we are going to install Routing and DirectAccess and VPN (RAS). RAS will b
   <img src=images/Picture117.png>
 </p>
 
-Next, we will go to tools and select Routing and Remote Access
+<div align="center">Next, we will go to tools and select Routing and Remote Access</div>
 
 <p align="center"><img src=images/Picture118.png></p>
 
-Next, right click on DC (local) and select Configure and Enable Routing and Remote Access
+<div align="center">Next, right click on DC (local) and select Configure and Enable Routing and Remote Access</div>
 
 <p align="center">
   <img src=images/Picture119.png>
   <img src=images/Picture120.png>
 </p>
 
-Select Network address translation (NAT). This allows internal clients to connect to the Internet using one public IP address
+<div align="center">Select Network address translation (NAT). This allows internal clients to connect to the Internet using one public IP address</div>
 
 <p align="center"><img src=images/Picture121.png></p>
 
-Next, we will select the Internet Network Interfaces to use this public interface to connect to the internet
+<div align="center">Next, we will select the Internet Network Interfaces to use this public interface to connect to the internet</div>
 
 <p align="center"><img src=images/Picture122.png></p>
 <p align="center"><img src=images/Picture123.png></p>
 
-Once it finishes the Routing and Remote Access Server Setup, we can see a green up arrow displayed next to DC (local) which means it is completely configured.
+<div align="center">Once it finishes the Routing and Remote Access Server Setup, we can see a green up arrow displayed next to DC (local) which means it is completely configured</div>
 
 <p align="center"><img src=images/Picture124.png></p>
 
-The next step we are going to do is setup a DHCP server on our domain controller. This is going to allow our Windows 10 clients to get an IP address that will allow them to get on the internet and browse the internet even though they are on this private internal network. To setup our DHCP we will go to Add roles and features
+<div align="center">The next step we are going to do is setup a DHCP server on our domain controller. This is going to allow our Windows 10 clients to get an IP address that will allow them to get on the internet and browse the internet even though they are on this private internal network. To setup our DHCP we will go to Add roles and features</div>
 
 <p align="center">
   <img src=images/Picture125.png>
@@ -440,19 +440,19 @@ The next step we are going to do is setup a DHCP server on our domain controller
   <img src=images/Picture135.png>
 </p>
 
-Next go to Tools and select DHCP and setup our scope
+<div align="center">Next go to Tools and select DHCP and setup our scope</div>
 
 <p align="center">
   <img src=images/Picture136.png>
   <img src=images/Picture137.png>
 </p>
 
-The purpose of DHCP is allow client computers on the network to automatically get their IP addresses. Our scope will give IP addresses in this range 172.16.0.100-200. Go to our DHCP server and select the dc.mydomain.com. We notice they are both red which indicates they are down. Right click on IPv4 and select New Scope
+<div align="center">The purpose of DHCP is allow client computers on the network to automatically get their IP addresses. Our scope will give IP addresses in this range 172.16.0.100-200. Go to our DHCP server and select the dc.mydomain.com. We notice they are both red which indicates they are down. Right click on IPv4 and select New Scope</div>
 
 <p align="center"><img src=images/Picture138.png></p>
 <p align="center"><img src=images/Picture139.png></p>
 
-Next we will name the Scope as the IP address range 172.16.0.100-200
+<div align="center">Next we will name the Scope as the IP address range 172.16.0.100-200</div>
 
 <p align="center">
   <img src=images/Picture140.png>
@@ -462,12 +462,12 @@ Next we will name the Scope as the IP address range 172.16.0.100-200
   <img src=images/Picture144.png>
 </p>
 
-We configured NAT on the Domain Controller, and the Domain Controller has routing configured so its job is to forward traffic from the clients to the internet. Because of this configuration the clients are going to use the internal NIC of the Domain Controller as their default gateway/router. Enter the Domain Controller IP address that has NAT
+<div align="center">We configured NAT on the Domain Controller, and the Domain Controller has routing configured so its job is to forward traffic from the clients to the internet. Because of this configuration the clients are going to use the internal NIC of the Domain Controller as their default gateway/router. Enter the Domain Controller IP address that has NAT</div>
 
 <p align="center"><img src=images/Picture145.png></p>
 <p align="center"><img src=images/Picture146.png></p>
 
-When you install Active Directory on the Domain Controller it automatically installs DNS. Because of that we are going to use the Domain Controller as our DNS server
+<div align="center">When you install Active Directory on the Domain Controller it automatically installs DNS. Because of that we are going to use the Domain Controller as our DNS server</div>
 
 <p align="center">
   <img src=images/Picture147.png>
@@ -478,7 +478,7 @@ When you install Active Directory on the Domain Controller it automatically inst
   <img src=images/Picture152.png>
 </p>
 
-Now we have our DNS setup
+<div align="center">Now we have our DNS setup</div>
 
 <p align="center"><img src=images/Picture153.png></p>
 

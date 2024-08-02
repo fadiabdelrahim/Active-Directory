@@ -350,7 +350,59 @@ Next select Member Of -> Add
   <img src=images/Picture96.png>
 </p>
 
+Next, we will enter Domain Admins in the Enter the object names to select to resolve to domain admin
 
+<p align="center">
+  <img src=images/Picture97.png>
+  <img src=images/Picture98.png>
+  <img src=images/Picture99.png>
+</p>
+
+Now we have our very own domain admin account. To use this, go ahead and log out of the Domain Controller
+
+<p align="center"><img src=images/Picture100.png></p>
+
+Unlock the lock screen
+
+<p align="center"><img src=images/Picture101.png></p>
+
+Instead of logging into this administrator one we are going to select Other user and we see it says sign into MYDOMAIN. We are going to use our domain admin account here (a-fabdelrahim) to log in
+
+<p align="center">
+  <img src=images/Picture102.png>
+  <img src=images/Picture103.png>
+</p>
+
+Next, we are going to install RAS/NAT, that is like remote access server (RAS) network address and network address translation (NAT). The purpose of this is to allow us when we create our Windows 10 client, it is going to allow this client to be on this private virtual network but still be able to access the internet through the domain controller. So, we are going to install RAS and NAT on the domain controller to allow our clients to do that. To do this we will go to Add roles and features 
+
+<p align="center">
+  <img src=images/Picture104.png>
+  <img src=images/Picture105.png>
+  <img src=images/Picture106.png>
+  <img src=images/Picture107.png>
+</p>
+
+Select Remote Access
+
+<p align="center">
+  <img src=images/Picture108.png>
+  <img src=images/Picture109.png>
+  <img src=images/Picture110.png>
+</p>
+
+Next, we are going to install Routing and DirectAccess and VPN (RAS). RAS will be checked automatically once you select Routing and select Add Features
+
+<p align="center">
+  <img src=images/Picture111.png>
+  <img src=images/Picture112.png>
+  <img src=images/Picture113.png>
+  <img src=images/Picture114.png>
+  <img src=images/Picture115.png>
+  <img src=images/Picture116.png>
+  <img src=images/Picture117.png>
+</p>
+
+Next, we will go to tools and select Routing and Remote Access
 
 
 

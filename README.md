@@ -306,6 +306,57 @@ Next unlock and sign into our built-in Administrator account. You will notice we
 
 Now we are going to create our own dedicated Domain Admin Account instead of using the built-in administrator account. To do this go to Start -> Windows Administrative Tools -> Active Directory Users and Computers
 
+<p align="center"><img src=images/Picture85.png></p>
+
+We can see this mydomian.com is our newly created domain it’s all fresh 
+
+<p align="center"><img src=images/Picture86.png></p>
+
+Next, we will create an organizational unit to put our admin account in. Right click mydomain.com -> New -> Organizational Unit
+
+<p align="center"><img src=images/Picture87.png></p>
+
+Next, we will give a name to the new Organizational Unit. Name it _ADMINS
+
+<p align="center"><img src=images/Picture88.png></p>
+
+Next, we will need to create a new user in the _ADMINS Organizational Unit. Right click on _ADMINS -> New -> User
+
+<p align="center"><img src=images/Picture89.png></p>
+
+Next we will enter the information for the new user
+
+<p align="center"><img src=images/Picture90.png></p>
+
+Next enter a password for the new user
+
+<p align="center">
+  <img src=images/Picture91.png>
+  <img src=images/Picture92.png>
+</p>
+
+We now have an account but it’s not an admin yet even though we named it a-fabdelrahim
+
+<p align="center"><img src=images/Picture93.png></p>
+
+To make a domain admin right click the user and select properties
+
+<p align="center"><img src=images/Picture94.png></p>
+
+Next select Member Of -> Add
+
+<p align="center">
+  <img src=images/Picture95.png>
+  <img src=images/Picture96.png>
+</p>
+
+
+
+
+
+
+
+
 
 
 ## 

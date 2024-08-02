@@ -239,6 +239,72 @@ This project outlines the steps to set up a basic home lab running Active Direct
   <img src=images/Picture58.png>
 </p>
 
+Next unlock and sign in Administrator account
+
+<p align="center"><img src=images/Picture59.png></p>
+<p align="center"><img src=images/Picture60.png></p>
+<p align="center"><img src=images/Picture61.png></p>
+
+The next thing we are going to do is install Active Directory Domain Services and create a domain. Select Add roles and features
+
+<p align="center">  
+  <img src=images/Picture62.png>
+  <img src=images/Picture63.png>
+</p>
+
+Select Role-based or feature-based installation
+
+<p align="center"><img src=images/Picture64.png></p>
+
+Select DC server we created as the Select destination server to install the Active Directory Domain Services on it
+
+<p align="center"><img src=images/Picture65.png></p>
+
+Select Active Directory Domain Services 
+
+<p align="center">
+  <img src=images/Picture66.png>
+  <img src=images/Picture67.png>
+  <img src=images/Picture68.png>
+  <img src=images/Picture69.png>
+  <img src=images/Picture70.png>
+  <img src=images/Picture71.png>
+</p>
+
+Now that the role has been installed, we can close the Add Roles and Feature Wizard
+
+<p align="center"><img src=images/Picture72.png></p>
+
+Next check notifications, we need to do our post deployment configuration (we installed the software for active directory domain services, but we did not actually create the domain yet). Select Promote this server to domain controller
+
+<p align="center"><img src=images/Picture73.png></p>
+
+Next select Add a new forest. For the Domain name enter mydomain.com and select next
+
+<p align="center"><img src=images/Picture74.png></p>
+
+Next enter a password for Directory Services Restore Mode (DSRM)
+
+<p align="center">
+  <img src=images/Picture75.png>
+  <img src=images/Picture76.png>
+  <img src=images/Picture77.png>
+  <img src=images/Picture78.png>
+  <img src=images/Picture79.png>
+  <img src=images/Picture80.png>
+</p>
+
+Now that it has finished installing it is going to automatically restart the computer for us (This may take a while to complete restart)
+
+<p align="center"><img src=images/Picture81.png></p>
+
+Next unlock and sign into our built-in Administrator account. You will notice we now have MYDOMAIN\Administrator 
+
+<p align="center"><img src=images/Picture82.png></p>
+<p align="center"><img src=images/Picture83.png></p>
+<p align="center"><img src=images/Picture84.png></p>
+
+Now we are going to create our own dedicated Domain Admin Account instead of using the built-in administrator account. To do this go to Start -> Windows Administrative Tools -> Active Directory Users and Computers
 
 
 

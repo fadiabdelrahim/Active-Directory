@@ -368,10 +368,8 @@ Unlock the lock screen
 
 Instead of logging into this administrator one we are going to select Other user and we see it says sign into MYDOMAIN. We are going to use our domain admin account here (a-fabdelrahim) to log in
 
-<p align="center">
-  <img src=images/Picture102.png>
-  <img src=images/Picture103.png>
-</p>
+<p align="center"><img src=images/Picture102.png></p>
+<p align="center"><img src=images/Picture103.png></p>
 
 Next, we are going to install RAS/NAT, that is like remote access server (RAS) network address and network address translation (NAT). The purpose of this is to allow us when we create our Windows 10 client, it is going to allow this client to be on this private virtual network but still be able to access the internet through the domain controller. So, we are going to install RAS and NAT on the domain controller to allow our clients to do that. To do this we will go to Add roles and features 
 
@@ -403,6 +401,87 @@ Next, we are going to install Routing and DirectAccess and VPN (RAS). RAS will b
 </p>
 
 Next, we will go to tools and select Routing and Remote Access
+
+<p align="center"><img src=images/Picture118.png></p>
+
+Next, right click on DC (local) and select Configure and Enable Routing and Remote Access
+
+<p align="center">
+  <img src=images/Picture119.png>
+  <img src=images/Picture120.png>
+</p>
+
+Select Network address translation (NAT). This allows internal clients to connect to the Internet using one public IP address
+
+<p align="center"><img src=images/Picture121.png></p>
+
+Next, we will select the Internet Network Interfaces to use this public interface to connect to the internet
+
+<p align="center"><img src=images/Picture122.png></p>
+<p align="center"><img src=images/Picture123.png></p>
+
+Once it finishes the Routing and Remote Access Server Setup, we can see a green up arrow displayed next to DC (local) which means it is completely configured.
+
+<p align="center"><img src=images/Picture124.png></p>
+
+The next step we are going to do is setup a DHCP server on our domain controller. This is going to allow our Windows 10 clients to get an IP address that will allow them to get on the internet and browse the internet even though they are on this private internal network. To setup our DHCP we will go to Add roles and features
+
+<p align="center">
+  <img src=images/Picture125.png>
+  <img src=images/Picture126.png>
+  <img src=images/Picture127.png>
+  <img src=images/Picture128.png>
+  <img src=images/Picture129.png>
+  <img src=images/Picture130.png>
+  <img src=images/Picture131.png>
+  <img src=images/Picture132.png>
+  <img src=images/Picture133.png>
+  <img src=images/Picture134.png>
+  <img src=images/Picture135.png>
+</p>
+
+Next go to Tools and select DHCP and setup our scope
+
+<p align="center">
+  <img src=images/Picture136.png>
+  <img src=images/Picture137.png>
+</p>
+
+The purpose of DHCP is allow client computers on the network to automatically get their IP addresses. Our scope will give IP addresses in this range 172.16.0.100-200. Go to our DHCP server and select the dc.mydomain.com. We notice they are both red which indicates they are down. Right click on IPv4 and select New Scope
+
+<p align="center"><img src=images/Picture138.png></p>
+<p align="center"><img src=images/Picture139.png></p>
+
+Next we will name the Scope as the IP address range 172.16.0.100-200
+
+<p align="center">
+  <img src=images/Picture140.png>
+  <img src=images/Picture141.png>
+  <img src=images/Picture142.png>
+  <img src=images/Picture143.png>
+  <img src=images/Picture144.png>
+</p>
+
+We configured NAT on the Domain Controller, and the Domain Controller has routing configured so its job is to forward traffic from the clients to the internet. Because of this configuration the clients are going to use the internal NIC of the Domain Controller as their default gateway/router. Enter the Domain Controller IP address that has NAT
+
+<p align="center"><img src=images/Picture145.png></p>
+<p align="center"><img src=images/Picture146.png></p>
+
+When you install Active Directory on the Domain Controller it automatically installs DNS. Because of that we are going to use the Domain Controller as our DNS server
+
+<p align="center">
+  <img src=images/Picture147.png>
+  <img src=images/Picture148.png>
+  <img src=images/Picture149.png>
+  <img src=images/Picture150.png>
+  <img src=images/Picture151.png>
+  <img src=images/Picture152.png>
+</p>
+
+Now we have our DNS setup
+
+<p align="center"><img src=images/Picture153.png></p>
+
 
 
 

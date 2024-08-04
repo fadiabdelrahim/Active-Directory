@@ -1,4 +1,4 @@
-# <p align="center"> Active-Directory
+# <p align="center"> Active Directory
 
 ## Introduction
 

@@ -1,4 +1,4 @@
-# <p align="center"> Active Directory
+# <p align="center"> Active Directory Home Lab
 
 ## Introduction
 
@@ -482,6 +482,115 @@ This project outlines the steps to set up a basic home lab running Active Direct
 
 <p align="center"><img src=images/Picture153.png></p>
 
+Next, we are going to create a PowerShell script. This script is designed to automate the creation of user accounts in Active Directory (AD).
+
+<p align="center">
+  <img src=images/Picture154.png>
+  <img src=images/Picture155.png>
+  <img src=images/Picture156.png>
+</p>
+
+<p align="center"><img src=images/Picture157.png></p>
+
+***Variables Section***
+
+-	`$PASSWORD_FOR_USERS`: This variable specifies the default password for all new user accounts being created. In this case, it’s set to “Password1”.
+-	`$NUMBER_OF_ACCOUNTS_TO_CREATE`:  This variable specifies the total number of user accounts to be created.
+
+<p align="center"><img src=images/Picture158.png></p>
+
+***Create Organizational Unit***
+
+-	This line creates a new Organizational Unit (OU) named `_USERS` in Active Directory. The `-ProtectedFromAccidentalDeletion $false` parameter ensures that the OU can be deleted without any additional confirmation (this is set for easy clean up after lab)
+
+<p align="center"><img src=images/Picture159.png></p>
+
+***Generate Random First Name Function***
+
+-	`generate-random-first-name`: This function returns a random name from a predefined list of first names.
+
+<p align="center"><img src=images/Picture160.png></p>
+
+***Generate Random Last Name Function***
+
+-	`generate-random-last-name`: This function returns a random last name from a predefined list of last names.
+
+<p align="center">
+  <img src=images/Picture161.png>
+  <img src=images/Picture162.png>
+</p>
+
+***Main Loop for Creating User Accounts***
+
+-	This loop iterates until the number of created (`$count`) reaches the specified number (`$NUMBER_OF_ACCOUNTS_TO_CREATE`).
+-	In each iteration, it generates a random first name and last name, combines them to form a username, and sets the password.
+-	`ConvertTo-SecureString $PASSWORD_FOR_USERS -AsPlainText -Force` converts the password to a secure string format required by `New-ADUser`.
+-	`Write-Host “Creating user: $($username)” `outputs the username being created
+-	`New-ADUser` is a cmdlet used to create a new Active Directory user. It sets various attributes such as password, given name, surname, display name, employee ID, and enables the account. 
+-	The script uses a ‘try’ block to attempt to create the user account and increments the count if successful.
+-	The `catch` block handles any errors that occur during the account creation and outputs an error message.
+-	If there is a failure in user creation, the script catches the exception and outputs the error message.
+
+<p align="center">
+  <img src=images/Picture163.png>
+  <img src=images/Picture164.png>
+</p>
+
+Next, we will have to enable the execution of all scripts on this server. In the terminal enter the following command: Set-ExecutionPolicy Unrestricted 
+
+<p align="center">
+  <img src=images/Picture165.png>
+  <img src=images/Picture166.png>
+</p>
+
+Now we can run the PowerShell script to create new users and add them to our Active Directory under _USERS.
+
+<p align="center">
+  <img src=images/Picture167.png>
+  <img src=images/Picture168.png>
+</p>
+
+The script successfully ran, and all our users have been created. We can navigate to the Active Directory, and we can see that we have our _USERS folder that the script created, and we can see a list of users inside.
+
+***Step 5: Create and configure a client virtual machine running Windows 10***
+
+At this point we have almost everything setup. The internet is connected. We have the NICs setup, the domain is setup with all our users, NAT is setup, DHCP is setup, and we are connected to the internal VMWare network. The very last thing we need to do is create the Windows 10 virtual machine in VirtualBox. It will use an internal NIC and it will get its IP address from our DHCP server we configured. Go to VirtualBox and select New
+
+<p align="center">
+  <img src=images/Picture169.png>
+  <img src=images/Picture170.png>
+  <img src=images/Picture171.png>
+  <img src=images/Picture172.png>
+  <img src=images/Picture173.png>
+</p>
+
+Before we start the CLIENT1 virtual machine go to settings -> Network and select Internal Network for Attached to:
+
+<p align="center">
+  <img src=images/Picture174.png>
+  <img src=images/Picture175.png>
+  <img src=images/Picture176.png>
+  <img src=images/Picture177.png>
+  <img src=images/Picture178.png>
+  <img src=images/Picture179.png>
+  <img src=images/Picture180.png>
+  <img src=images/Picture181.png>
+  <img src=images/Picture182.png>
+  <img src=images/Picture183.png>
+  <img src=images/Picture184.png>
+  <img src=images/Picture185.png>
+  <img src=images/Picture186.png>
+  <img src=images/Picture187.png>
+  <img src=images/Picture188.png>
+  <img src=images/Picture189.png>
+  <img src=images/Picture190.png>
+  <img src=images/Picture191.png>
+  <img src=images/Picture192.png>
+  <img src=images/Picture193.png>
+  <img src=images/Picture194.png>
+  <img src=images/Picture195.png>
+  <img src=images/Picture196.png>
+</p>
 
 
 

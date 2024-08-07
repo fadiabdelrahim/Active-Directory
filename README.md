@@ -18,7 +18,7 @@ This project outlines the steps to set up a basic home lab running Active Direct
 
 ## Topology
 
-![Picture1](images/Picture1.jpg)
+<p align="center"><img src=images/Picture1.png></p>  
 
 ## Lab Configuration
 

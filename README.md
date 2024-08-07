@@ -653,7 +653,7 @@ This project outlines the steps to set up a basic home lab running Active Direct
   <img src=images/Picture216.png>
 </p>
 
-<div align="center">We have successful log in with the user account we on the Windows 10 client machine</div>
+<div align="center">We have successful log in with the user account we created on the Windows 10 client machine</div>
 
 <p align="center">
   <img src=images/Picture217.png>

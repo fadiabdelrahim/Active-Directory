@@ -482,7 +482,7 @@ This project outlines the steps to set up a basic home lab running Active Direct
 
 <p align="center"><img src=images/Picture153.png></p>
 
-Next, we are going to create a PowerShell script. This script is designed to automate the creation of user accounts in Active Directory (AD).
+<div align="center">Next, we are going to create a PowerShell script. This script is designed to automate the creation of user accounts in Active Directory (AD)</div>
 
 <p align="center">
   <img src=images/Picture154.png>
@@ -498,7 +498,7 @@ Next, we are going to create a PowerShell script. This script is designed to aut
 
 ***Create Organizational Unit***
 
--	This line creates a new Organizational Unit (OU) named `_USERS` in Active Directory. The `-ProtectedFromAccidentalDeletion $false` parameter ensures that the OU can be deleted without any additional confirmation (this is set for easy clean up after lab)
+- This line creates a new Organizational Unit (OU) named `_USERS` in Active Directory. The `-ProtectedFromAccidentalDeletion $false` parameter ensures that the OU can be deleted without any additional confirmation (this is set for easy clean up after lab)
 
 <p align="center"><img src=images/Picture157.png></p>
 
@@ -527,35 +527,35 @@ Next, we are going to create a PowerShell script. This script is designed to aut
 
 <p align="center"><img src=images/Picture160.png></p>
 
-Save the script as AD-Creat-Users
+<div align="center">Save the script as AD-Creat-Users</div>
 
 <p align="center">
   <img src=images/Picture161.png>
   <img src=images/Picture162.png>
 </p>
 
-Next, we will have to enable the execution of all scripts on this server. In the terminal enter the following command: `Set-ExecutionPolicy Unrestricted` 
+<div align="center">Next, we will have to enable the execution of all scripts on this server. In the terminal enter the following command: Set-ExecutionPolicy Unrestricted</div>
 
 <p align="center">
   <img src=images/Picture163.png>
   <img src=images/Picture164.png>
 </p>
 
-Next, we will need to navigate to the desktop in the PowerShell terminal 
+<div align="center">Next, we will need to navigate to the desktop in the PowerShell terminal</div> 
 
 <p align="center">
   <img src=images/Picture165.png>
   <img src=images/Picture166.png>
 </p>
 
-Now we can run the PowerShell script to create new users and add them to our Active Directory under _USERS.
+<div align="center">Now we can run the PowerShell script to create new users and add them to our Active Directory under _USERS</div>
 
 <p align="center">
   <img src=images/Picture167.png>
   <img src=images/Picture168.png>
 </p>
 
-The script successfully ran, and all our users have been created. We can navigate to the Active Directory, and we can see that we have our _USERS folder that the script created, and we can see a list of users inside.
+<div align="center">The script successfully ran, and all our users have been created. We can navigate to the Active Directory, and we can see that we have our _USERS folder that the script created, and we can see a list of users inside</div>
 
 <p align="center">
   <img src=images/Picture169.png>
@@ -564,7 +564,7 @@ The script successfully ran, and all our users have been created. We can navigat
 
 ***Step 5: Create and configure a client virtual machine running Windows 10***
 
-At this point we have almost everything setup. The internet is connected. We have the NICs setup, the domain is setup with all our users, NAT is setup, DHCP is setup, and we are connected to the internal VMWare network. The very last thing we need to do is create the Windows 10 virtual machine in VirtualBox. It will use an internal NIC and it will get its IP address from our DHCP server we configured. Go to VirtualBox and select New
+<div align="center">At this point we have almost everything setup. The internet is connected. We have the NICs setup, the domain is setup with all our users, NAT is setup, DHCP is setup, and we are connected to the internal VMWare network. The very last thing we need to do is create the Windows 10 virtual machine in VirtualBox. It will use an internal NIC and it will get its IP address from our DHCP server we configured. Go to VirtualBox and select New</div>
 
 <p align="center">
   <img src=images/Picture171.png>
@@ -574,7 +574,7 @@ At this point we have almost everything setup. The internet is connected. We hav
   <img src=images/Picture175.png>
 </p>
 
-Before we start the CLIENT1 virtual machine go to settings -> Network and select Internal Network for Attached to:
+<div align="center">Before we start the CLIENT1 virtual machine go to settings -> Network and select Internal Network for Attached to:</div>
 
 <p align="center">
   <img src=images/Picture176.png>
@@ -602,7 +602,7 @@ Before we start the CLIENT1 virtual machine go to settings -> Network and select
   <img src=images/Picture198.png>
 </p>
 
-Now our Windows 10 is setup. The first thing we will check is if the internet is working. Click on start and enter cmd to open a command prompt. Type ipconfig to verify we have a connection 
+<div align="center">Now our Windows 10 is setup. The first thing we will check is if the internet is working. Click on start and enter cmd to open a command prompt. Type ipconfig to verify we have a connection</div> 
 
 <p align="center">
   <img src=images/Picture199.png>
@@ -610,11 +610,11 @@ Now our Windows 10 is setup. The first thing we will check is if the internet is
   <img src=images/Picture201.png>
 </p>
 
-Next, we will try and ping google.com to check that our DNS is working, and the internet is accessible 
+<div align="center">Next, we will try and ping google.com to check that our DNS is working, and the internet is accessible</div> 
 
 <p align="center"><img src=images/Picture202.png></p>
 
-Next, we will change the name of this Windows 10 machine and join the domain at the same time. Right click start menu and select system 
+<div align="center">Next, we will change the name of this Windows 10 machine and join the domain at the same time. Right click start menu and select system</div> 
 
 <p align="center">
   <img src=images/Picture203.png>
@@ -623,7 +623,7 @@ Next, we will change the name of this Windows 10 machine and join the domain at 
   <img src=images/Picture206.png>
 </p>
 
-Use domain admin account we created to give permission to join domain
+<div align="center">Use domain admin account we created to give permission to join domain</div>
 
 <p align="center">
   <img src=images/Picture207.png>
@@ -632,28 +632,28 @@ Use domain admin account we created to give permission to join domain
   <img src=images/Picture210.png>
 </p>
 
-Now go back to the Domain Controller and go to DHCP and check the Address Leases to verify that our Windows 10 client has joined
+<div align="center">Now go back to the Domain Controller and go to DHCP and check the Address Leases to verify that our Windows 10 client has joined</div>
 
 <p align="center">
   <img src=images/Picture211.png>
   <img src=images/Picture212.png>
 </p>
 
-Next go to Active Directory Users and Computers to verify that the computer has been added to the domain so we can confirm that the users we created can be accessed on the windows 10 client machine
+<div align="center">Next go to Active Directory Users and Computers to verify that the computer has been added to the domain so we can confirm that the users we created can be accessed on the windows 10 client machine</div>
 
 <p align="center">
   <img src=images/Picture213.png>
   <img src=images/Picture214.png>
 </p>
 
-Now go back to the Windows 10 client virtual machine and let’s log in with one of the user accounts we created
+<div align="center">Now go back to the Windows 10 client virtual machine and let’s log in with one of the user accounts we created</div>
 
 <p align="center">
   <img src=images/Picture215.png>
   <img src=images/Picture216.png>
 </p>
 
-We have successful log in with the user account we on the Windows 10 client machine
+<div align="center">We have successful log in with the user account we on the Windows 10 client machine</div>
 
 <p align="center">
   <img src=images/Picture217.png>

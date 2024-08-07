@@ -598,13 +598,65 @@ Before we start the CLIENT1 virtual machine go to settings -> Network and select
   <img src=images/Picture194.png>
   <img src=images/Picture195.png>
   <img src=images/Picture196.png>
+  <img src=images/Picture197.png>
+  <img src=images/Picture198.png>
 </p>
 
+Now our Windows 10 is setup. The first thing we will check is if the internet is working. Click on start and enter cmd to open a command prompt. Type ipconfig to verify we have a connection 
 
+<p align="center">
+  <img src=images/Picture199.png>
+  <img src=images/Picture200.png>
+  <img src=images/Picture201.png>
+</p>
 
+Next, we will try and ping google.com to check that our DNS is working, and the internet is accessible 
 
+<p align="center"><img src=images/Picture202.png></p>
 
+Next, we will change the name of this Windows 10 machine and join the domain at the same time. Right click start menu and select system 
 
+<p align="center">
+  <img src=images/Picture203.png>
+  <img src=images/Picture204.png>
+  <img src=images/Picture205.png>
+  <img src=images/Picture206.png>
+</p>
 
+Use domain admin account we created to give permission to join domain
 
-## 
+<p align="center">
+  <img src=images/Picture207.png>
+  <img src=images/Picture208.png>
+  <img src=images/Picture209.png>
+  <img src=images/Picture210.png>
+</p>
+
+Now go back to the Domain Controller and go to DHCP and check the Address Leases to verify that our Windows 10 client has joined
+
+<p align="center">
+  <img src=images/Picture211.png>
+  <img src=images/Picture212.png>
+</p>
+
+Next go to Active Directory Users and Computers to verify that the computer has been added to the domain so we can confirm that the users we created can be accessed on the windows 10 client machine
+
+<p align="center">
+  <img src=images/Picture213.png>
+  <img src=images/Picture214.png>
+</p>
+
+Now go back to the Windows 10 client virtual machine and let’s log in with one of the user accounts we created
+
+<p align="center">
+  <img src=images/Picture215.png>
+  <img src=images/Picture216.png>
+</p>
+
+We have successful log in with the user account we on the Windows 10 client machine
+
+<p align="center">
+  <img src=images/Picture217.png>
+  <img src=images/Picture218.png>
+</p>
+
